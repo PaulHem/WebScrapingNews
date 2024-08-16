@@ -41,7 +41,6 @@ class LeMondeScraper:
             number_of_comment_pages = 1
         for i in range(number_of_comment_pages):
             comment_page_url = contributions_url + f'&page={i+1}'
-            print(comment_page_url)
             self.driver.get(comment_page_url)
             wait = WebDriverWait(self.driver, 10)
             comments = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'comment')))
